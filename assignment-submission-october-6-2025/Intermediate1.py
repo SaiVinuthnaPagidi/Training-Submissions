@@ -5,12 +5,11 @@ print (df.tail(5)) #displaying the last five rows of the dataset
 print("\nDataset shape:", df.shape) #shape of the dataset
 columns_to_check = ["New Cases", "New Deaths", "New Recovered"] #selecting columns to analyse 
 from statistics import mean 
-# Calculate totals and averages using built-in functions
+# Calculate totals and averages using built-in functions - method 1
 total_cases = df["New Cases"].sum()
 average_cases = df["New Cases"].mean()
 total_deaths = df["New Deaths"].sum()
 average_deaths = df["New Deaths"].mean()
-
 # Display results
 print("\n=== COVID-19 Summary ===")
 print(f"Total New Cases: {total_cases:,}")
@@ -18,6 +17,7 @@ print(f"Average Daily New Cases: {average_cases:,.2f}")
 print(f"Total New Deaths: {total_deaths:,}")
 print(f"Average Daily New Deaths: {average_deaths:,.2f}")
 
+#Using loop function along with built-in mean() function - method 2
 # Loop through each column
 for col in columns_to_check:
     # Convert column to a list (ignoring missing values)
